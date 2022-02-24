@@ -9,4 +9,6 @@ app.post("/login", (req, res, next) => {
     res.sendStatus(401);
 })
 
-app.listen(2000);
+const server = app.listen(process.env.port || 2000, () => {
+    console.log(`Started on http://localhost:${server.address().port}`)
+})
